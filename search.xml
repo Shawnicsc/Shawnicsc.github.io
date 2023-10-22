@@ -4,6 +4,87 @@
   
     
     <entry>
+      <title>四数之和</title>
+      <link href="/2023/10/22/%E5%9B%9B%E6%95%B0%E4%B9%8B%E5%92%8C/"/>
+      <url>/2023/10/22/%E5%9B%9B%E6%95%B0%E4%B9%8B%E5%92%8C/</url>
+      
+        <content type="html"><![CDATA[<h1 id="四数之和"><a href="#四数之和" class="headerlink" title="四数之和"></a>四数之和</h1><p><a href="https://leetcode.cn/problems/4sum-ii/">四数之和</a></p><h2 id="思路分析"><a href="#思路分析" class="headerlink" title="思路分析"></a>思路分析</h2><p>此题是从四个数组中寻找相加为0的四个数，其中会有重复出现可能，所以可以使用 <code>Map</code> 哈希法来解决。</p><p><code>key</code> 存放前两个数组<code>a+b</code>的值，<code>value</code>存储<code>a+b</code>出现的次数。</p><p>先遍历前两个数组，存储<code>a+b</code>的值和出现的次数。</p><p>再遍历剩下两个数组，寻找 <code>0-c-d</code> 是否在<code>map</code>中出现，使 <code>res</code>加上 出现的次数，即可获得答案。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">int</span> <span class="title function_">fourSumCount</span><span class="params">(<span class="type">int</span>[] nums1, <span class="type">int</span>[] nums2, <span class="type">int</span>[] nums3, <span class="type">int</span>[] nums4)</span> &#123;</span><br><span class="line">        Map&lt;Integer,Integer&gt; map = <span class="keyword">new</span> <span class="title class_">HashMap</span>&lt;&gt;();</span><br><span class="line">        <span class="comment">// 寻找 a+b</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> a : nums1)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> b : nums2)&#123;</span><br><span class="line">                <span class="type">int</span> <span class="variable">sum</span> <span class="operator">=</span> a+b;</span><br><span class="line">                map.put(sum, map.getOrDefault(sum,<span class="number">0</span>)+<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//寻找 0-c-d</span></span><br><span class="line">        <span class="type">int</span> <span class="variable">cnt</span> <span class="operator">=</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> c : nums3)&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="type">int</span> d : nums4)&#123;</span><br><span class="line">                cnt += map.getOrDefault(<span class="number">0</span>-c-d,<span class="number">0</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> cnt;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 刷题笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Leetcode </tag>
+            
+            <tag> Hash </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SpringBoot跨域访问配置</title>
+      <link href="/2023/10/21/SpringBoot%E8%B7%A8%E5%9F%9F%E8%AE%BF%E9%97%AE%E9%85%8D%E7%BD%AE/"/>
+      <url>/2023/10/21/SpringBoot%E8%B7%A8%E5%9F%9F%E8%AE%BF%E9%97%AE%E9%85%8D%E7%BD%AE/</url>
+      
+        <content type="html"><![CDATA[<h1 id="SpringBoot跨域访问"><a href="#SpringBoot跨域访问" class="headerlink" title="SpringBoot跨域访问"></a>SpringBoot跨域访问</h1><h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>当我们在进行前后端开发时，经常会需要在前端接收来自后端的不同端口传输的信息，此时便需要用到跨域访问。</p><h2 id="跨域"><a href="#跨域" class="headerlink" title="跨域"></a>跨域</h2><p>跨域是指跨域名的访问，以下情况都属于跨域：</p><ul><li>域名不同<a href="http://www.baidu.com/">www.baidu.com</a> 与 <a href="http://www.taobao.com/">www.taobao.com</a></li><li>域名相同，端口不同<a href="http://www.baidu.com:8080/">www.baidu.com:8080</a> 与 <a href="http://www.baidu.com:8081/">www.baidu.com:8081</a></li><li>二级域名不同shawni.jd.com 与 ran.jd.com</li></ul><h2 id="Config-配置类"><a href="#Config-配置类" class="headerlink" title="Config 配置类"></a>Config 配置类</h2><p>解决跨域问题，既可以在前端，也可以在后端，我们在实际开发场景中，通常在后端配置一个跨域配置类，指定可跨域请求的路径。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">CorsConfig</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 当前跨域请求最大有效时长。这里默认1天</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="type">long</span> <span class="variable">MAX_AGE</span> <span class="operator">=</span> <span class="number">24</span> * <span class="number">60</span> * <span class="number">60</span>;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> CorsFilter <span class="title function_">corsFilter</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="type">UrlBasedCorsConfigurationSource</span> <span class="variable">source</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">UrlBasedCorsConfigurationSource</span>();</span><br><span class="line">        <span class="type">CorsConfiguration</span> <span class="variable">corsConfiguration</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">CorsConfiguration</span>();</span><br><span class="line">        corsConfiguration.addAllowedOrigin(<span class="string">&quot;*&quot;</span>); <span class="comment">// 1 设置访问源地址</span></span><br><span class="line">        corsConfiguration.addAllowedHeader(<span class="string">&quot;*&quot;</span>); <span class="comment">// 2 设置访问源请求头</span></span><br><span class="line">        corsConfiguration.addAllowedMethod(<span class="string">&quot;*&quot;</span>); <span class="comment">// 3 设置访问源请求方法</span></span><br><span class="line">        corsConfiguration.setMaxAge(MAX_AGE);</span><br><span class="line">        source.registerCorsConfiguration(<span class="string">&quot;/**&quot;</span>, corsConfiguration); <span class="comment">// 4 对接口配置跨域设置</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">CorsFilter</span>(source);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SpringBoot </tag>
+            
+            <tag> 跨域 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>SpringBoot集成SwaggerUI</title>
+      <link href="/2023/10/21/SpringBoot%E9%9B%86%E6%88%90SwaggerUI/"/>
+      <url>/2023/10/21/SpringBoot%E9%9B%86%E6%88%90SwaggerUI/</url>
+      
+        <content type="html"><![CDATA[<h1 id="SpringBoot集成Swagger3"><a href="#SpringBoot集成Swagger3" class="headerlink" title="SpringBoot集成Swagger3"></a>SpringBoot集成Swagger3</h1><h2 id="应用场景"><a href="#应用场景" class="headerlink" title="应用场景"></a>应用场景</h2><p>在开发时，我们经常会面对对接口的测试。而 Swagger 是一个在线 api框架，能够在线测试我们的api接口。同时是支持RESTfui 风格接口测试。</p><h2 id="依赖导入"><a href="#依赖导入" class="headerlink" title="依赖导入"></a>依赖导入</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--swagger--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-boot-starter<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">version</span>&gt;</span>3.0.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure><h2 id="Config-配置类"><a href="#Config-配置类" class="headerlink" title="Config 配置类"></a>Config 配置类</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableOpenApi</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">swaggerConfig</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 创建API应用</span></span><br><span class="line"><span class="comment">     * apiInfo() 增加API相关信息</span></span><br><span class="line"><span class="comment">     * 通过select()函数返回一个ApiSelectorBuilder实例,用来控制哪些接口暴露给Swagger来展现，</span></span><br><span class="line"><span class="comment">     * 本例采用指定扫描的包路径来定义指定要建立API的目录。</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="keyword">public</span> Docket <span class="title function_">restApi</span><span class="params">()</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Docket</span>(DocumentationType.SWAGGER_2)</span><br><span class="line">                .groupName(<span class="string">&quot;标准接口&quot;</span>)</span><br><span class="line">                .apiInfo(apiInfo(<span class="string">&quot;Spring Boot中使用Swagger3构建RESTful APIs&quot;</span>, <span class="string">&quot;1.0&quot;</span>))</span><br><span class="line">                .useDefaultResponseMessages(<span class="literal">true</span>)</span><br><span class="line">                .forCodeGeneration(<span class="literal">false</span>)</span><br><span class="line">                .select()</span><br><span class="line">                .apis(RequestHandlerSelectors.basePackage(<span class="string">&quot;com.shawni.manager.controller&quot;</span>))</span><br><span class="line">                .paths(PathSelectors.any())</span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * 创建该API的基本信息（这些基本信息会展现在文档页面中）</span></span><br><span class="line"><span class="comment">     * 访问地址：http://ip:port/swagger-ui/index.html</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="keyword">private</span> ApiInfo <span class="title function_">apiInfo</span><span class="params">(String title, String version)</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">ApiInfoBuilder</span>()</span><br><span class="line">                .title(title)</span><br><span class="line">                .description(<span class="string">&quot;Swagger3&quot;</span>)</span><br><span class="line">                .termsOfServiceUrl(<span class="string">&quot;https://Shawnicsc.github.io&quot;</span>)</span><br><span class="line">                .contact(<span class="keyword">new</span> <span class="title class_">Contact</span>(<span class="string">&quot;shawni&#x27;s Blog&quot;</span>, <span class="string">&quot;https://Shawnicsc.github.io&quot;</span>, <span class="string">&quot;shawni@firefox.com&quot;</span>))</span><br><span class="line">                .version(version)</span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 技术学习 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> SpringBoot </tag>
+            
+            <tag> Swagger3 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>两数之和(集合版)</title>
       <link href="/2023/10/20/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-%E9%9B%86%E5%90%88%E7%89%88/"/>
       <url>/2023/10/20/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C-%E9%9B%86%E5%90%88%E7%89%88/</url>
