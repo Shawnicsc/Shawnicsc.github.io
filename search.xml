@@ -4,6 +4,33 @@
   
     
     <entry>
+      <title>赎金信</title>
+      <link href="/2023/10/23/%E8%B5%8E%E9%87%91%E4%BF%A1/"/>
+      <url>/2023/10/23/%E8%B5%8E%E9%87%91%E4%BF%A1/</url>
+      
+        <content type="html"><![CDATA[<h1 id="赎金信"><a href="#赎金信" class="headerlink" title="赎金信"></a>赎金信</h1><p><a href="https://leetcode.cn/problems/ransom-note/description/">赎金信</a></p><p>此题采用数组解法，只需分别遍历两个数组，记录各元素出现次数即可。</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">Solution</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">canConstruct</span><span class="params">(String ransomNote, String magazine)</span> &#123;</span><br><span class="line">        <span class="type">int</span>[] res = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">26</span>];</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">if</span>(ransomNote.length() &gt; magazine.length() )</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line"></span><br><span class="line">        <span class="type">char</span>[] maga = magazine.toCharArray();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>;i&lt;magazine.length();i++)&#123;</span><br><span class="line">            res[maga[i] - <span class="string">&#x27;a&#x27;</span>]++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="type">char</span>[] ran = ransomNote.toCharArray();</span><br><span class="line">        <span class="keyword">for</span>(<span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> <span class="number">0</span>; i&lt;ransomNote.length();i++ )&#123;</span><br><span class="line">            res[ran[i] - <span class="string">&#x27;a&#x27;</span>]--;</span><br><span class="line">            <span class="keyword">if</span>(res[ran[i] - <span class="string">&#x27;a&#x27;</span>] &lt; <span class="number">0</span> )</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      <categories>
+          
+          <category> 刷题笔记 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Leetcode </tag>
+            
+            <tag> Hash </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>四数之和</title>
       <link href="/2023/10/22/%E5%9B%9B%E6%95%B0%E4%B9%8B%E5%92%8C/"/>
       <url>/2023/10/22/%E5%9B%9B%E6%95%B0%E4%B9%8B%E5%92%8C/</url>
