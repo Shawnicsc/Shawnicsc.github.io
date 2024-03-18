@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>Cipher-加解密系统</title>
+      <link href="/2024/03/18/cipher-jia-jie-mi-xi-tong/"/>
+      <url>/2024/03/18/cipher-jia-jie-mi-xi-tong/</url>
+      
+        <content type="html"><![CDATA[<h1 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h1><p>本项目是基于 SpringBoot 和 Vue，简单运用了SpringCloud 中微服务相互调用的功能实现的加解密系统，提供了 AES、ECDSA、SHA256、SM2、SM3、SM4这几种加密算法的加解密功能，其中秘钥部分，由系统自动随机生成。</p><h1 id="系统架构"><a href="#系统架构" class="headerlink" title="系统架构"></a>系统架构</h1><h2 id="前端"><a href="#前端" class="headerlink" title="前端"></a>前端</h2><p>Vue + Nuxt + axios</p><h2 id="后端"><a href="#后端" class="headerlink" title="后端"></a>后端</h2><p>SpringBoot + SpringCloud + Mybatis-plus + Mysql</p><h1 id="项目地址"><a href="#项目地址" class="headerlink" title="项目地址"></a>项目地址</h1><p><a href="https://github.com/Shawnicsc/Crypto">Cipher</a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 课程项目 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Java </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>期末复习——软件安全</title>
       <link href="/2023/12/24/qi-mo-fu-xi-ruan-jian-an-quan/"/>
       <url>/2023/12/24/qi-mo-fu-xi-ruan-jian-an-quan/</url>
