@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>基于Pytorch的自动变异提示词系统</title>
+      <link href="/2025/01/26/ji-yu-pytorch-de-zi-dong-bian-yi-ti-shi-ci-xi-tong/"/>
+      <url>/2025/01/26/ji-yu-pytorch-de-zi-dong-bian-yi-ti-shi-ci-xi-tong/</url>
+      
+        <content type="html"><![CDATA[<h2 id="技术调研阶段"><a href="#技术调研阶段" class="headerlink" title="技术调研阶段"></a>技术调研阶段</h2><p><img src="/2025/01/26/ji-yu-pytorch-de-zi-dong-bian-yi-ti-shi-ci-xi-tong/NLP.drawio.png" alt="模块设计图"></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 毕业设计征程 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> NLP </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>2024年度总结</title>
       <link href="/2025/01/04/2024-nian-du-zong-jie/"/>
       <url>/2025/01/04/2024-nian-du-zong-jie/</url>
